@@ -14,14 +14,18 @@
 #include "utn.h"
 
 
-int main(void) {
+int main(void)
+
+{
+	setbuf(stdout, NULL);
 
 	int opcion;
 	int numero1;
 	int numero2;
 	int suma;
 	int resta;
-	long long factorial;
+	int factorialNumero1;
+	int factorialNumero2;
 	int multiplicacion;
 	int division;
 	int flagNumero1=0;
@@ -48,21 +52,31 @@ int main(void) {
 					suma= utn_sumarNumeros(numero1, numero2);
 					resta= utn_restarNumeros(numero1, numero2);
 					multiplicacion= utn_multiplicacionNumeros(numero1, numero2);
-					division= utn_divisionNumeros(numero1, numero2);
-					factorial=utn_factorial(numero1, numero2);
+					division=utn_divisionNumeros(numero1, numero2);
+					factorialNumero1=utn_factorial(numero1);
+					factorialNumero2=utn_factorial(numero2);
 
 				}else
 				{
 					printf("\nError, tiene que ingresar dos numeros\n");
 				}
 
+				printf("\nLa operacion ha sido completada con exito.");
 			break;
 		case 4:
-				printf("\n%d",suma);
-				printf("\n%d",resta);
-				printf("\n%d",multiplicacion);
-				printf("\n%d",division);
-				printf("\n%d", factorial);
+				printf("\nEl resultado de A+B es: %d", suma);
+				printf("\nEl resultado de A-B es: %d",resta);
+				printf("\nEl resultado de A*B es: %d",multiplicacion);
+				printf("\nEl resultado del factorial de A es: %d", factorialNumero1);
+				printf("\nEl resultado del factorial de B es: %d", factorialNumero2);
+
+				if(numero2==0)
+				{
+					printf("\nEl resultado de la division no pudo realizarse ya que no se puede dividir por 0");
+				}else
+				{
+					printf("\nE resultado de A/B es: %d",division);
+				}
 				break;
 		case 5:
 			break;

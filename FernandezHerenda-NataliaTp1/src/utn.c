@@ -49,17 +49,22 @@ int utn_divisionNumeros(int numero1, int numero2)
 {
 	int division;
 
-	division= numero1/numero2;
+	if(numero2==0)
+	{
+
+	}else
+	{
+		division=numero1/numero2;
+	}
 
 	return division;
 }
 
-long long utn_factorial(int numero1, int numero2)
+int utn_factorial(int numeroIngresado)
 {
-	long long factorial=1;                             //// utilizo long long ya que el numero que ingresen puede ser muy grande para guardarlo en int
+	int factorial=1;
 
-
-	for(int i=0;i>0;i--)                              ////la variable i la tomo como el numero que se ingresara en el main, por cada vuelta decrece i.
+	for(int i=numeroIngresado;i>0;i--)                              ////la variable i la tomo como el numero que se ingresara en el main, por cada vuelta decrece i.
 	{
 		factorial=factorial*i;						 ////Se multiplica el factorial hasta que llegue a 1.
 	}
