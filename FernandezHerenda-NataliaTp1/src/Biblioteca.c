@@ -64,9 +64,9 @@ int utn_factorial(int numeroIngresado)
 {
 	int factorial=1;
 
-	for(int i=numeroIngresado;i>0;i--)                              ////la variable i la tomo como el numero que se ingresara en el main, por cada vuelta decrece i.
+	for(int i=numeroIngresado;i>0;i--)
 	{
-		factorial=factorial*i;						 ////Se multiplica el factorial hasta que llegue a 1.
+		factorial=factorial*i;
 	}
-	return factorial;								//// devuelve factorial cuando termina.
+	return factorial;
 }

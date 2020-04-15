@@ -5,8 +5,8 @@
  *      Author: natalia
  */
 
-#ifndef UTN_H_
-#define UTN_H_
+#ifndef BIBLIOTECA_H_
+#define BIBLIOTECA_H_
 
 int utn_getNumero(void);
 /* @brief	Pide al usuario ingresar numeros.
@@ -43,4 +43,4 @@ int utn_factorial(int numeroIngresado);
 * @param	En numeroIngresado, se completa con el numero que ingreso el usuario sea en el caso A o B.
 * @return	Retorna el resultado del factorial de CADA numero.*/
 
-#endif /* UTN_H_ */
+#endif /* BIBLIOTECA_H_ */
