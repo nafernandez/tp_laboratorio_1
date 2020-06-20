@@ -53,7 +53,7 @@ int findEmployeeIndexById(Employee* aEmployee, int len, int id);
 pointer received or employee not found]
 *
 */
-int removeEmployee(Employee* list, int len, int id);
+int deleteEmployee(Employee* list, int len, int id);
 /** \brief Remove a Employee by Id (put isEmpty Flag in 1)
 *
 * \param list Employee*
@@ -116,6 +116,6 @@ int showAverageSalaryAndAboveAverage(Employee* aEmployee, int len);
 * \param list Employee*
 * \param len int
 * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
-*
+*/
 
-#endif /* ARRAYEMPLOYEES_H_ */
+#endif /* UTN_H_ */
