@@ -68,7 +68,7 @@ int main(void) {
 			case 1:
 				printf("ALTA DE EMPLEADOS\n");
 				flagDatos=1;
-				auxiliarIndice=buscarPrimerPosicionVacia(arrayEmployees, QTY_EMPLOYEES);
+				auxiliarIndice=findFirstPositionEmpty(arrayEmployees, QTY_EMPLOYEES);
 				if(auxiliarIndice>=0)
 				{
 					if((utn_getNombre(auxName, QTY_LETTERS, "Ingrese el nombre", "Error, reingrese el nombre", 2)==0 &&
@@ -126,9 +126,6 @@ int main(void) {
 				}
 				break;
 			case 4:
-				//1. Listado de los empleados ordenados alfabéticamente por Apellido y Sector.
-				//2. Total y promedio de los salarios, y cuántos empleados superan el salario promedio.
-
 				if(flagDatos)
 					{
 						if(!utn_getNumero(&opcionInformes, "Ingrese la opcion a elegir:\n"

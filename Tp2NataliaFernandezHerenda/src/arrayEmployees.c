@@ -23,12 +23,12 @@ int initEmployees(Employee* aEmployee, int len)
 	}
 	for(i=0; i < len; i++)
 	{
-		aEmployee[i].isEmpty= 1;    ///true es 1, esta vacio
+		aEmployee[i].isEmpty= 1;
 	}
 	return retorno;
 }
 
-int buscarPrimerPosicionVacia(Employee* aEmployee, int len)
+int findFirstPositionEmpty(Employee* aEmployee, int len)
 {
 	int respuesta= -1;
 	int i;
@@ -143,7 +143,7 @@ int showEmployee(Employee* aEmployee)
 		if(aEmployee != NULL && aEmployee->isEmpty == 0)
 		{
 			retorno=0;
-			printf("\nID: %d\nNombre: %s\nApellido: %s\nSalario: %.2f\n Sector: %d\n ssisempty: %d\n",aEmployee->id, aEmployee->name, aEmployee->lastName,aEmployee->salary, aEmployee->sector, aEmployee->isEmpty);
+			printf("\nID: %d\nNombre: %s\nApellido: %s\nSalario: %.2f\n Sector: %d\n",aEmployee->id, aEmployee->name, aEmployee->lastName,aEmployee->salary, aEmployee->sector);
 		}
 		return retorno;
 
@@ -255,8 +255,6 @@ int sortEmployees(Employee* aEmployee,int len, int order)
 	return respuesta;
 }
 
-//2. Total y promedio de los salarios, y cuántos empleados superan el salario promedio
-
 int showAverageSalaryAndAboveAverage(Employee* aEmployee, int len)
 {
 	int respuesta=-1;
@@ -272,8 +270,8 @@ int showAverageSalaryAndAboveAverage(Employee* aEmployee, int len)
 			acumuladorSalarios=acumuladorSalarios+aEmployee[i].salary;
 		}
 		promedio=acumuladorSalarios/i;
-		printf("Monto total de los sueldos: %d", acumuladorSalarios);
-		printf("Promedio total de los sueldos: %.2f", promedio);
+		printf("\nMonto total de los sueldos: %d\n", acumuladorSalarios);
+		printf("\nPromedio total de los sueldos: %.2f\n", promedio);
 		respuesta=0;
 		for(i=0;i<len &&  aEmployee[i].isEmpty==0; i++)
 		{
@@ -283,7 +281,7 @@ int showAverageSalaryAndAboveAverage(Employee* aEmployee, int len)
 			}
 		}
 
-		printf("La cantidad de empleados que superan el salario promedio es de: %d", contadorMayoresDelPromedio);
+		printf("\nLa cantidad de empleados que superan el salario promedio es de: %d\n", contadorMayoresDelPromedio);
 	}
 	return respuesta;
 }
