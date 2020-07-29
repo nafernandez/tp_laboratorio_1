@@ -100,23 +100,23 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement)
 			nuevoNode->pElement=pElement;
 			nuevoNode->pNextNode=NULL;
 
-			if(ll_isEmpty(this))/// si es nulo es que la lista esta vacia, primer caso
+			if(ll_isEmpty(this))
 			{
-				this->pFirstNode= nuevoNode;////(se le agrega el quie le hice malloc)
+				this->pFirstNode= nuevoNode;
 
 
 			}else if(nodeIndex!=0)
 			{
-				auxNode=this->pFirstNode;/// aux se usa para recorrer
+				auxNode=this->pFirstNode;
 
 				while(auxNode!=NULL && i!= nodeIndex)
 				{
-					anteriorNode=auxNode; /// guardo la referencia de auxNode en anteriorNode para no perderla, dps ya puedo llenarla con otro puntero a nodo
+					anteriorNode=auxNode;
 					auxNode=auxNode->pNextNode;
 					i++;
 				}
 				nuevoNode->pNextNode= auxNode;
-				anteriorNode->pNextNode=nuevoNode;/// NUNCA ESCRIBIR PUNTERO !!!!! ANTERIORNODE=NUEVONODE INVALIDO!!!!!!!!!!
+				anteriorNode->pNextNode=nuevoNode;
 			}else
 			{
 				nuevoNode->pNextNode=this->pFirstNode;
@@ -218,12 +218,12 @@ int ll_remove(LinkedList* this,int index)
 	Node* nodoAEliminar= getNode(this, index);
 	Node* nodoAnterior=NULL;
 	int returnAux = -1;
-	if(this!=NULL && index>=0 && index<ll_len(this) && nodoAEliminar!=NULL)/// ver porque esto es asi
+	if(this!=NULL && index>=0 && index<ll_len(this) && nodoAEliminar!=NULL)
 	{
-		if (index==0)  // esiopte es el principio
+		if (index==0)
 		{
-			this->pFirstNode=(this->pFirstNode)->pNextNode;/// le asigno el siguiente nodo al primer nodo
-		}else/// este es el final
+			this->pFirstNode=(this->pFirstNode)->pNextNode;
+		}else
 		{
 			nodoAnterior=getNode(this, index-1);
 			nodoAnterior->pNextNode=getNode(this, index+1);
